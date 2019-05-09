@@ -64,7 +64,7 @@ else:
         print('A soma de todos os números no intervalo entre {} e {} é {}'.format(num2, num1, soma))
     else:
         print('Números inválidos!')
-        
+
 
 b) A soma de todos os números ímpares no intervalo fornecido pelos dois números
 num1 = int(input('Digite um número positivo: '))
@@ -181,7 +181,7 @@ if (num < 0 or num > 10):
 else:
     if (num == 0):
         print('0! = 1')
-    
+
     else:
         cont = num
         fatorial = 1
@@ -237,7 +237,7 @@ while (cont <= 15):
         bonus = '10%'
     else:
         bonus = '15%'
-    
+
     print('Olá {}! Você acaba de receber um bônus especial de {}!\n'.format(nome, bonus))
     cont += 1
 
@@ -263,10 +263,10 @@ while (cont <= 10):
     valor = float(input('Valor Pago: R$ '))
     tipoPagamento = (input('Tipo de Pagamento: ')).upper()
     print('------------------------')
-    
+
     if (tipoPagamento == 'V'):
         total += valor
-    
+
     cont += 1
 print('Valor total das vendas a vista: R$ ', total)
 
@@ -277,10 +277,10 @@ while (cont <= 10):
     valor = float(input('Valor Pago: R$ '))
     tipoPagamento = (input('Tipo de Pagamento: ')).upper()
     print('------------------------')
-    
+
     if (tipoPagamento == 'P'):
         total += valor
-    
+
     cont += 1
 print('Valor total das vendas a prazo: R$ ', total)
 
@@ -290,7 +290,7 @@ total = 0
 while (cont <= 10):
     valor = float(input('Valor Pago: R$ '))
     total += valor
-    
+
     cont += 1
 print('Valor total das vendas: R$ ', total)
 
@@ -318,7 +318,7 @@ while (cont <= 15):
     print('------------------------')
 
     somaAlturas += altura
-    
+
     cont += 1
 print('A média das alturas das pessoas é ', somaAlturas/15)
 
@@ -331,16 +331,15 @@ while (cont <= 15):
     altura = float(input('Altura: '))
     peso = float(input('Peso: '))
     print('------------------------')
-    
+
     if (idade >= 10 and idade <= 20):
         somaAlturas += altura
         qtde += 1
-    
+
     cont += 1
 print('A média das alturas das pessoas enre 10 e 20 anos é ', somaAlturas/qtde)
 
 d) A porcentagem de pessoas com peso inferior a 60Kg entre todas as pessoas analisadas
-'''
 cont = 1
 qtde = 0
 while (cont <= 15):
@@ -348,22 +347,89 @@ while (cont <= 15):
     altura = float(input('Altura: '))
     peso = float(input('Peso: '))
     print('------------------------')
-    
+
     if (peso < 60):
         qtde += 1
-    
+
     cont += 1
 porcentagem = (qtde / 15) * 100
 print('A porcentagem de pessoas com peso inferior a 60 kg é ', porcentagem)
 
-'''
 16) Foi feita uma pesquisa entre os habitantes de uma cidade. Foram coletados os dados da idade, sexo (M/F)
 e salário. Desenvolva um programa que calcule e mostre:
 a) A média dos salários dos habitantes
+hab = 0
+idade = 0
+somaSalario = 0
+while (idade >= 0):
+    idade = int(input('Idade: '))
+    if (idade >= 0):
+        sexo = (input('Sexo: ')).upper()
+        salario = float(input('Salário: '))
+        somaSalario += salario
+        hab += 1
+print('A média de salário dos habitantes é ', somaSalario / hab)
+
 b) A maior e a menor idade informada
+hab = 0
+idade = 0
+maiorIdade = 0
+menorIdade = 0
+while (idade >= 0):
+    idade = int(input('Idade: '))
+    if (idade >= 0):
+        sexo = (input('Sexo: ')).upper()
+        salario = float(input('Salário: '))
+
+        if (hab == 0):
+            maiorIdade = idade
+            menorIdade = idade
+        else:
+            if (idade > maiorIdade):
+                maiorIdade = idade
+            elif (idade < menorIdade):
+                menorIdade = idade
+        hab += 1
+print('A maior idade é {} e a menor idade é {}'.format(maiorIdade, menorIdade))
+
 c) A quantidade de mulheres que recebem salários até R$ 2500,00
+hab = 0
+idade = 0
+qtde = 0
+while (idade >= 0):
+    idade = int(input('Idade: '))
+    if (idade >= 0):
+        sexo = (input('Sexo: ')).upper()
+        salario = float(input('Salário: R$ '))
+        if (sexo == 'F' and salario < 2500):
+            qtde += 1
+    hab += 1
+
+print('A quantidade de mulheres com salários até R$ 2500,00 é ', qtde)
+
 d) A idade e o sexo da pessoa que possui o menor salário
 O programa deve ser finalizado quando a idade informada for um valor negativo.
+hab = 0
+idade = 0
+qtde = 0
+menorSalario = 0
+while (idade >= 0):
+    idade = int(input('Idade: '))
+    if (idade >= 0):
+        sexo = (input('Sexo: ')).upper()
+        salario = float(input('Salário: R$ '))
+
+        if (hab == 0):
+            menorSalario = salario
+        else:
+            if (salario < menorSalario):
+                sMenor = sexo
+                iMenor = idade
+
+    hab += 1
+
+print('A pessoa com menor salário é do sexo {} e tem {} anos'.format(sMenor, iMenor))
+
 17) Faça um programa que apresente o seguinte menu ao usuário:
 Menu de opções:
 1. Média aritmética
@@ -379,6 +445,40 @@ Ao escolher a opção 4, o sistema deve ser finalizado.
 Ao escolher uma opção inválida, o sistema deverá informar ao usuário que esta opção é inválida.
 A cada escolha da opção, o sistema deve executar o que se pede e retornar ao menu de opções, sendo
 finalizado apenas quando o usuário informar 4.
+opcao = 0
+while (opcao != 4):
+    print('=========================\n' +
+    'Menu de opções: \n' +
+    '1. Média aritmética \n' +
+    '2. Média ponderada \n' +
+    '3. Exibir mensagem de boas vindas \n' +
+    '4. Sair')
+    opcao = int(input('Digite a opção desejada: '))
+
+    if (opcao == 1):
+        nota1 = float(input('Digite uma nota: '))
+        nota2 = float(input('Digite outra nota: '))
+        print('A média das notas é ', (nota1 + nota2)/2)
+
+    elif (opcao == 2):
+        nota1 = float(input('Digite uma nota: '))
+        peso1 = int(input('Digite o peso: '))
+        nota2 = float(input('Digite outra nota: '))
+        peso2 = int(input('Digite o peso: '))
+        nota3 = float(input('Digite outra nota: '))
+        peso3 = int(input('Digite o peso: '))
+        media = ((nota1 * peso1) + (nota2 * peso2) + (nota3 * peso3)) / (peso1 + peso2 + peso3)
+        print('A média ponderada das notas é ', media)
+
+    elif (opcao == 3):
+        print('Bem-Vindo!!!!!!!')
+
+    elif (opcao == 4):
+        break
+
+    else:
+        print('Opção inválida!!')
+
 18) Crie um programa que apresente o seguinte menu ao usuário:
 Opções disponíveis:
 1. Exibir os quadrados de 5 números
@@ -407,6 +507,84 @@ números ao usuário e apresentar a raiz quadrada de cada número. Na opção (6
 valores: a base e o expoente, o sistema deverá exibir a base elevado ao expoente. Caso o usuário informe um
 valor diferente de 1~7, o sistema deverá emitir uma mensagem de erro. O sistema só será finalizado ao
 digitar a opção 7. A cada execução da opção escolhida, o sistema deve retornar ao menu principal.
+'''
+opcao = 0
+while (opcao != 7):
+    print('\n=================================\n' +
+    'Opções disponíveis:\n' +
+    '1. Exibir os quadrados de 5 números\n' +
+    '2. Exibir números pares em um intervalo informado\n' +
+    '3. Exibir o caractere * em uma diagonal de 10 linhas\n' +
+    '4. Exibir os números de 10 a 1\n' +
+    '5. Exibir a raiz quadrada de 4 números informados pelo usuário\n' +
+    '6. Exibir o valor de bn, onde b e n devem ser solicitados ao usuário\n'+
+    '7. Sair')
+    opcao = int(input('Digite sua opção: '))
+
+    if (opcao == 1):
+        cont = 0
+        while(cont < 5):
+            num = int(input('Digite um número: '))
+            print('O quadrado do número é ', num ** 2)
+            cont += 1
+
+    elif (opcao == 2):
+        x = int(input('Digite um número: '))
+        y = int(input('Digite outro número: '))
+        cont = 0
+
+        if (x < y):
+            cont = x
+            while (cont <= y):
+                if (cont % 2 == 0):
+                    print(cont)
+                cont += 1
+
+        elif (x > y):
+            cont = y
+            while (cont <= x):
+                if (cont % 2 == 0):
+                    print(cont)
+                cont += 1
+
+        else:
+            print('Valores inválidos!')
+
+    elif (opcao == 3):
+        linhas = 0
+        espacos = 0
+        while (linhas < 9):
+            cont = 0
+            while (cont < espacos):
+                print(' ', end='')
+                cont += 1
+            print('*')
+            espacos += 1
+            linhas += 1
+
+    elif (opcao == 4):
+        cont = 10
+        while (cont > 0):
+            print(cont)
+            cont -= 1
+
+    elif (opcao == 5):
+        cont = 0
+        while (cont < 4):
+            num = int(input('Digite um número: '))
+            print('A raiz quadrada desse número é ', num ** (1/2))
+            cont += 1
+
+    elif (opcao == 6):
+        num = int(input('Digite um número: '))
+        num2 = int(input('Digite outro número: '))
+        print('O número {} elevado a {} é igual a {}'.format(num, num2, (num ** num2)))
+
+
+    elif (opcao == 7):
+        break
+
+'''
 19) Crie um algoritmo que solicite um limite inferior e um limite superior. Garanta que o limite superior seja
 um valor válido. Solicite também um valor de incremento. O sistema deverá apresentar na tela todos os
 números do limite inferior ao limite superior, respeitando o valor de incremento. Exemplo:

@@ -507,7 +507,6 @@ números ao usuário e apresentar a raiz quadrada de cada número. Na opção (6
 valores: a base e o expoente, o sistema deverá exibir a base elevado ao expoente. Caso o usuário informe um
 valor diferente de 1~7, o sistema deverá emitir uma mensagem de erro. O sistema só será finalizado ao
 digitar a opção 7. A cada execução da opção escolhida, o sistema deve retornar ao menu principal.
-'''
 opcao = 0
 while (opcao != 7):
     print('\n=================================\n' +
@@ -584,7 +583,6 @@ while (opcao != 7):
     elif (opcao == 7):
         break
 
-'''
 19) Crie um algoritmo que solicite um limite inferior e um limite superior. Garanta que o limite superior seja
 um valor válido. Solicite também um valor de incremento. O sistema deverá apresentar na tela todos os
 números do limite inferior ao limite superior, respeitando o valor de incremento. Exemplo:
@@ -592,6 +590,19 @@ Limite inferior: 0
 Limite superior: 47
 Incremento: 5
 0 5 10 15 20 25 30 35 40 45
+limInf = int(input('Limite inferior: '))
+limSup = int(input('Limite superior: '))
+incremento = int(input('Incremento: '))
+
+if (limSup > limInf):
+    cont = limInf
+    while (cont <= limSup):
+        print(cont, end=' ')
+        cont += incremento
+
+else:
+    print('Valores inválidos!')
+
 20) Para converter graus Célsius em Fahrenheit, utilizamos a fórmula � = .(0123)
 5
 .
@@ -608,6 +619,19 @@ Fahrenheit Celcius
 62 16.66
 ...
 150 65.55
+tempInicial = float(input('Temperatura inicial: '))
+tempFinal = float(input('Temperatura final: '))
+incremento = int(input('Incremento: '))
+cont = tempInicial
+
+print('Fahrenheit \t Celsius')
+while (cont <= tempFinal):
+    tempC = (5 * (cont - 32)) / 9
+
+    print(cont, '\t\t', tempC)
+    
+    cont += incremento
+
 21) Crie um algoritmo que solicite ao usuário por um número que representa quantos valores serão
 fornecidos ao programa. Em seguida, leia os n números e apresente, para cada número, o seu triplo. Exemplo:
 Quantos números: 3
@@ -615,3 +639,10 @@ Número: 8 Triplo: 24
 Número: 10 Triplo: 30
 Número: 1 Triplo: 3
 '''
+qtos = int(input('Quantos números: '))
+cont = 1
+
+while (cont <= qtos):
+    num = int(input('Número: '))
+    print('Triplo: ', num * 3)
+    cont += 1

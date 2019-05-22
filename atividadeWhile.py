@@ -210,20 +210,52 @@ print('Quantidade de ímpares: ', qtdeImpares)
 
 15. A série de Fibonacci é formada pela seqüência 1,1,2,3,5,8,13,21,34,55,...
 Faça um programa capaz de gerar a série até o n−ésimo termo.
-'''
-cont = 0
 n = int(input('Digite o último termo: '))
-soma = 1
-while (cont < n):
-    soma += cont
-    print(soma, end = ', ')
+termo1 = 0
+termo2 = 1
+cont = 3
+print('{}, {}'.format(termo1, termo2), end = '')
+
+while (cont <= n):
+    termo3 = termo1 + termo2
+    print(', {}'.format(termo3), end = '')
+    termo1 = termo2
+    termo2 = termo3
     cont += 1
 
+16. A série de Fibonacci é formada pela seqüência 0,1,1,2,3,5,8,13,21,34,55,... 
+Faça um programa que gere a série até que o valor seja maior que 500.
+termo1 = 0
+termo2 = 1
+termo3 = termo1 + termo2
+cont = 3
+print(termo1, ', ', termo2, end = '')
+
+while (termo3 <= 500):
+    termo3 = termo1 + termo2
+    if (termo3 > 500):
+        break
+    print(', ', termo3, end = '')
+    termo1 = termo2
+    termo2 = termo3
+    cont += 1
+
+17. Faça um programa que calcule o fatorial de um número inteiro fornecido pelo usuário. Ex.: 5!=5.4.3.2.1=120
+'''
+n = int(input('Digite um número inteiro: '))
+fat = 1
+print('{}!='.format(n), end = '')
+while(n >= 1):
+    if (n == 1):
+        print('{}'.format(n), end = '')
+    else:
+        print('{}.'.format(n), end = '')
+    fat = fat * n
+    n -= 1
+print('={}'.format(fat))
 
 
 '''
-A série de Fibonacci é formada pela seqüência 0,1,1,2,3,5,8,13,21,34,55,... Faça um programa que gere a série até que o valor seja maior que 500.
-Faça um programa que calcule o fatorial de um número inteiro fornecido pelo usuário. Ex.: 5!=5.4.3.2.1=120
 Faça um programa que, dado um conjunto de N números, determine o menor valor, o maior valor e a soma dos valores.
 Altere o programa anterior para que ele aceite apenas números entre 0 e 1000.
 Altere o programa de cálculo do fatorial, permitindo ao usuário calcular o fatorial várias vezes e limitando o fatorial a números inteiros positivos e menores que 16.

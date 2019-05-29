@@ -1,0 +1,22 @@
+# pai = input('Nome do pai: ')
+# mae = input('Nome da mãe: ')
+# irma = input('Nome da irmã: ')
+# cunhado = input('Nome do cunhado: ')
+# sobrinho = input('Nome do sobrinho: ')
+#
+# print('\nO nome do pai é: ', pai)
+# print('O nome da mãe é: ', mae)
+# print('O nome da irmã é: ', irma)
+# print('O nome do cunhado é: ', cunhado)
+# print('O nome do sobrinho é: ', sobrinho)
+
+idades = [0] * 6
+# idades[3] = 18
+# idades[5] = 1
+# print(idades)
+# print(idades[3])
+cont = 0
+while (cont < len(idades)):
+    idades[cont] = int(input('Idade: '))
+    cont += 1
+print('Idades: ', idades)

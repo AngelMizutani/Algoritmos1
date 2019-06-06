@@ -205,26 +205,42 @@ for cont in range (0, len(vetor)):
     cont += 1
 '''
 '''
-Um professor precisa armazenar uma lista de n alunos e seus respectivos conceitos. Crie um programa para auxiliar este professor.
+7. Um professor precisa armazenar uma lista de n alunos e seus respectivos conceitos. 
+Crie um programa para auxiliar este professor.
 
-Faça um programa para armazenar seis números inteiros para uma loteria, permitindo que o usuário informe os números sorteados. Em seguida, peça para o usuário informar os seis números que ele apostou. Por fim, apresente na tela quantos números ele acertou, informando se ele não ganhou nada (0 a 3 acertos), se acertou a quadra (4 acertos), a quina (5 acertos) ou se ele nunca mais vai precisar trabalhar (6 acertos).
+8.Faça um programa para armazenar seis números inteiros para uma loteria, 
+permitindo que o usuário informe os números sorteados. 
+Em seguida, peça para o usuário informar os seis números que ele apostou. 
+Por fim, apresente na tela quantos números ele acertou, informando se ele não ganhou nada 
+(0 a 3 acertos), se acertou a quadra (4 acertos), a quina (5 acertos) ou se ele nunca 
+mais vai precisar trabalhar (6 acertos).
 
-Faça um programa para armazenar seis números inteiros para uma loteria, de modo que os seis números sejam criados aleatoriamente pelo Python e que não sejam repetidos. Em seguida, peça para o usuário informar os seis números que ele apostou. Por fim, apresente na tela quantos números ele acertou, informando se ele não ganhou nada (0 a 3 acertos), se acertou a quadra (4 acertos), a quina (5 acertos) ou se ele nunca mais vai precisar trabalhar (6 acertos).
+9. Faça um programa para armazenar seis números inteiros para uma loteria, 
+de modo que os seis números sejam criados aleatoriamente pelo Python e que não sejam repetidos. 
+Em seguida, peça para o usuário informar os seis números que ele apostou. 
+Por fim, apresente na tela quantos números ele acertou, informando se ele não ganhou nada 
+(0 a 3 acertos), se acertou a quadra (4 acertos), a quina (5 acertos) ou se ele nunca mais vai precisar trabalhar (6 acertos).
 
-Considerando que uma palavra (string) pode ser percorrida como um vetor, faça um programa que peça o nome de uma pessoa e o apresente de trás para frente.
+10. Considerando que uma palavra (string) pode ser percorrida como um vetor, 
+faça um programa que peça o nome de uma pessoa e o apresente de trás para frente.
 
-Um esquema de sorteio precisar armazenar uma lista de 10 pessoas e ao final sortear uma delas aleatoriamente. Faça um programa para este esquema. (Dica: procure no Google como faz para gerar um número inteiro aleatoriamente no Python)
+11. Um esquema de sorteio precisar armazenar uma lista de 10 pessoas e ao final sortear 
+uma delas aleatoriamente. Faça um programa para este esquema. 
+(Dica: procure no Google como faz para gerar um número inteiro aleatoriamente no Python)
 
-Utilizando listas faça um programa que faça 5 perguntas para uma pessoa sobre um crime. As perguntas são:
+12.Utilizando listas faça um programa que faça 5 perguntas para uma pessoa sobre um crime. 
+As perguntas são:
 "Telefonou para a vítima?"
 "Esteve no local do crime?"
 "Mora perto da vítima?"
 "Devia para a vítima?"
 "Já trabalhou com a vítima?"
 
-O programa deve no final emitir uma classificação sobre a participação da pessoa no crime. Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+O programa deve no final emitir uma classificação sobre a participação da pessoa no crime. 
+Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", 
+entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
 
-Uma empresa de pesquisas precisa tabular os resultados da seguinte enquete feita a um grande quantidade de organizações:
+13. Uma empresa de pesquisas precisa tabular os resultados da seguinte enquete feita a um grande quantidade de organizações:
 
 	"Qual o melhor Sistema Operacional para uso em servidores?"
 1- Windows Server

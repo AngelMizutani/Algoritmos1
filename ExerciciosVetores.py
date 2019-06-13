@@ -203,32 +203,146 @@ for cont in range (0, len(vetor)):
         contador += 1
     print('')
     cont += 1
-'''
-'''
-7. Um professor precisa armazenar uma lista de n alunos e seus respectivos conceitos. 
+
+7. Um professor precisa armazenar uma lista de n alunos e seus
+respectivos conceitos.
 Crie um programa para auxiliar este professor.
+n = int(input('Digite o número de alunos: '))
+alunos = [''] * n
+conceitos = [''] * n
+cont = 0
 
-8.Faça um programa para armazenar seis números inteiros para uma loteria, 
-permitindo que o usuário informe os números sorteados. 
-Em seguida, peça para o usuário informar os seis números que ele apostou. 
-Por fim, apresente na tela quantos números ele acertou, informando se ele não ganhou nada 
-(0 a 3 acertos), se acertou a quadra (4 acertos), a quina (5 acertos) ou se ele nunca 
+for cont in range(0, n):
+    alunos[cont] = input('Nome do aluno: ')
+    conceitos[cont] = input('Conceito: ')
+    cont += 1
+
+print('===========================')
+print('Lista de alunos e conceitos')
+for cont in range (0, n):
+    print(alunos[cont], '=', conceitos[cont])
+    cont += 1
+
+8.Faça um programa para armazenar seis números inteiros para uma loteria,
+permitindo que o usuário informe os números sorteados.
+Em seguida, peça para o usuário informar os seis números que ele apostou.
+Por fim, apresente na tela quantos números ele acertou, informando se ele não ganhou nada
+(0 a 3 acertos), se acertou a quadra (4 acertos), a quina (5 acertos) ou se ele nunca
 mais vai precisar trabalhar (6 acertos).
+sorteados = [0] * 6
+apostados = [0] * 6
+cont = 0
+acertos = 0
 
-9. Faça um programa para armazenar seis números inteiros para uma loteria, 
-de modo que os seis números sejam criados aleatoriamente pelo Python e que não sejam repetidos. 
-Em seguida, peça para o usuário informar os seis números que ele apostou. 
-Por fim, apresente na tela quantos números ele acertou, informando se ele não ganhou nada 
+for cont in range (0, len(sorteados)):
+    sorteados[cont] = int(input('Número sorteado: '))
+
+print('===============================')
+
+for cont in range (0, len(apostados)):
+    apostados[cont] = int(input('Número apostado: '))
+
+for cont in range(0, len(apostados)):
+    for contador in range (0, len(sorteados)):
+        if (apostados[cont] == sorteados[contador]):
+            acertos += 1
+
+if (acertos <= 3):
+    print('Você não ganhou... =(')
+
+elif (acertos == 4):
+    print('Parabéns! Você acertou a quadra!')
+
+elif (acertos == 5):
+    print('Parabéns! Você acertou a quina!')
+
+else:
+    print('PARABÉNS!!!! VOCÊ GANHOU NA LOTERIA!!!!!')
+
+
+9. Faça um programa para armazenar seis números inteiros para uma loteria,
+de modo que os seis números sejam criados aleatoriamente pelo Python e que não sejam repetidos.
+Em seguida, peça para o usuário informar os seis números que ele apostou.
+Por fim, apresente na tela quantos números ele acertou, informando se ele não ganhou nada
 (0 a 3 acertos), se acertou a quadra (4 acertos), a quina (5 acertos) ou se ele nunca mais vai precisar trabalhar (6 acertos).
+import random
+sorteados = [0] * 6
+apostados = [0] * 6
+contador = 0
+acertos = 0
 
-10. Considerando que uma palavra (string) pode ser percorrida como um vetor, 
+cont = 0
+while(cont < len(sorteados)):
+#for cont in range (0, len(sorteados)):
+    num = random.randint(1, 60)
+    
+    totalNum = 0
+    contador = 0
+    while (contador <= cont):
+        if (num == sorteados[contador]):
+            totalNum += 1
+            print("Valor " , num , " ja esta presente no vetor")
+        contador += 1
+    
+    if (totalNum == 0):
+        sorteados[cont] = num
+        print('Números sorteados:', sorteados[cont])
+        cont = cont + 1
+
+print('=================================================')
+
+for cont in range (0, len(apostados)):
+    apostados[cont] = int(input('Número apostado: '))
+
+print('=================================================')
+
+for cont in range (0, len(apostados)):
+    for contador in range (0, len(sorteados)):
+        if (apostados[cont] == sorteados[contador]):
+            acertos += 1
+
+if (acertos <= 3):
+    print('Acertos: ', acertos)
+    print('Você não ganhou... =(')
+
+elif (acertos == 4):
+    print('Acertos: ', acertos)
+    print('Parabéns! Você acertou a quadra!')
+
+elif (acertos == 5):
+    print('Acertos: ', acertos)
+    print('Parabéns! Você acertou a quina!')
+
+else:
+    print('Acertos: ', acertos)
+    print('PARABÉNS!!!! VOCÊ GANHOU NA LOTERIA!!!!!')
+
+10. Considerando que uma palavra (string) pode ser percorrida como um vetor,
 faça um programa que peça o nome de uma pessoa e o apresente de trás para frente.
+nome = input('Digite seu nome: ')
+cont = len(nome) - 1
 
-11. Um esquema de sorteio precisar armazenar uma lista de 10 pessoas e ao final sortear 
-uma delas aleatoriamente. Faça um programa para este esquema. 
+while (cont >= 0):
+    print(nome[cont], end='')
+    cont -= 1
+
+11. Um esquema de sorteio precisar armazenar uma lista de 10 pessoas e ao final sortear
+uma delas aleatoriamente. Faça um programa para este esquema.
 (Dica: procure no Google como faz para gerar um número inteiro aleatoriamente no Python)
+import random
 
-12.Utilizando listas faça um programa que faça 5 perguntas para uma pessoa sobre um crime. 
+nomes = [''] * 10
+cont = 0
+
+while (cont < len(nomes)):
+    nomes[cont] = input('Nome: ')
+    cont += 1
+
+ganhador = random.randint(0,9)
+# print(ganhador)
+print('O ganhador do sorteio é', nomes[ganhador])
+
+12.Utilizando listas faça um programa que faça 5 perguntas para uma pessoa sobre um crime.
 As perguntas são:
 "Telefonou para a vítima?"
 "Esteve no local do crime?"
@@ -236,9 +350,35 @@ As perguntas são:
 "Devia para a vítima?"
 "Já trabalhou com a vítima?"
 
-O programa deve no final emitir uma classificação sobre a participação da pessoa no crime. 
-Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita", 
+O programa deve no final emitir uma classificação sobre a participação da pessoa no crime.
+Se a pessoa responder positivamente a 2 questões ela deve ser classificada como "Suspeita",
 entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será classificado como "Inocente".
+perguntas = ['Telefonou para a vítima? ',
+             'Esteve no local do crime? ',
+             'Mora perto da vítima? ',
+             'Devia para a vítima? ',
+             'Já trabalhou com a vítima? ']
+
+respSim = 0
+
+for cont in range (0, len(perguntas)):
+    resp = input(perguntas[cont])
+    if (resp == 's'):
+        respSim += 1
+
+print('Número de respostas positivas:', respSim)
+
+if (respSim < 2):
+    print('Inocente')
+
+elif (respSim == 2):
+    print('Suspeito')
+
+elif (respSim >= 3 and respSim <= 4):
+    print('Cúmplice')
+
+else:
+    print('Assassino')
 
 13. Uma empresa de pesquisas precisa tabular os resultados da seguinte enquete feita a um grande quantidade de organizações:
 
@@ -250,7 +390,11 @@ entre 3 e 4 como "Cúmplice" e 5 como "Assassino". Caso contrário, ele será cl
 5- Mac OS
 6- Outro
 
-	Você foi contratado para desenvolver um programa que leia o resultado da enquete e informe ao final o resultado da mesma. O programa deverá ler os valores até ser informado o valor 0, que encerra a entrada dos dados. Não deverão ser aceitos valores além dos válidos para o programa (0 a 6). Os valores referentes a cada uma das opções devem ser armazenados num vetor. Após os dados terem sido completamente informados, o programa deverá calcular a percentual de cada um dos concorrentes e informar o vencedor da enquete. O formato da saída foi dado pela empresa, e é o seguinte:
+	Você foi contratado para desenvolver um programa que leia o resultado da enquete e informe ao final o resultado da mesma. 
+    O programa deverá ler os valores até ser informado o valor 0, que encerra a entrada dos dados. 
+    Não deverão ser aceitos valores além dos válidos para o programa (0 a 6). Os valores referentes a cada uma das 
+    opções devem ser armazenados num vetor. Após os dados terem sido completamente informados, o programa deverá calcular a 
+    percentual de cada um dos concorrentes e informar o vencedor da enquete. O formato da saída foi dado pela empresa, e é o seguinte:
 
 Sistema Operacional     Votos   %
 -------------------     	-----   	---
@@ -264,4 +408,66 @@ Outro                    	150    	2%
 Total                    	8800
 
 O Sistema Operacional mais votado foi o Unix, com 3500 votos, correspondendo a 40% dos votos.
+
 '''
+votos = [0] * 6
+sistOp = ['Windows Server', 'Unix', 'Linux', 'Netware', 'Mac OS', 'Outro']
+voto = -1
+win = 0
+unix = 0
+lin = 0
+net = 0
+mac = 0
+out = 0
+total = 0
+
+print('''
+Qual o melhor Sistema Operacional para uso em servidores?
+1- Windows Server
+2- Unix
+3- Linux
+4- Netware
+5- Mac OS
+6- Outro
+''')
+
+while (voto != 0):
+    voto = int(input('Seu voto: '))
+
+    if (voto == 1):
+        win += 1
+        votos[0] = win
+    
+    elif (voto == 2):
+        unix += 1
+        votos[1] = unix
+
+    elif (voto == 3):
+        lin += 1
+        votos[2] = lin
+
+    elif (voto == 4):
+        net += 1
+        votos[3] = net
+
+    elif (voto == 5):
+        mac += 1
+        votos[4] = mac
+    
+    elif (voto == 6):
+        out += 1
+        votos[5] = out
+
+    elif (voto == 0):
+        break
+    
+    else:
+        print('Valor inválido')
+
+total = win + unix + lin + net + mac + out
+print('Total de votos: ', total)
+
+print('Sistema Operacional \t Votos \t %')
+
+for contador in range (0, len(votos)):
+    print(sistOp[contador], '\t\t', votos[contador], '\t\t', votos[contador] / total)
